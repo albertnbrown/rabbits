@@ -1,7 +1,6 @@
 use std::env;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
-use std::cmp::max;
 
 // if you are unfamiliar with rust, run me via `cargo run path-to-file`
 
@@ -13,7 +12,7 @@ fn main() {
 
     // get file
     let file_name: &String = &args[1];
-    let mut f = BufReader::new(File::open(file_name).unwrap());
+    let f = BufReader::new(File::open(file_name).unwrap());
 
     // read file into array
     let mut arr: Vec<Vec<usize>> = f.lines()
